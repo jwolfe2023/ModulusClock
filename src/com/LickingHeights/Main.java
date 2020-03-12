@@ -1,28 +1,26 @@
 package com.LickingHeights;
 
-import javax.swing.plaf.synth.SynthEditorPaneUI;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-	modulusClock();
 
-
+        modulusClock();
 
     }
 
     public static void modulusClock() {
 
-        int hours;
-
-        int minutes;
-
         Scanner keyboard;
 
         keyboard = new Scanner(System.in);
 
-        System.out.println("Give Me An Hour: ");
+        int minutes;
+
+        int hours;
+
+        System.out.println("Give Me A Amount of Hour(s): ");
 
         hours = keyboard.nextInt();
 
@@ -30,9 +28,11 @@ public class Main {
 
         minutes = keyboard.nextInt();
 
-        System.out.println(hours);
+        hours = minutes >= 60 ? hours + minutes / 60 : hours ;
 
-        System.out.println(minutes);
+        minutes = hours >= 12 ? ++hours : minutes ;
+
+        System.out.println("The Time Is: " + hours + ":" + minutes);
 
     }
 }
