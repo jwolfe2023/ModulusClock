@@ -28,11 +28,10 @@ public class Main {
 
         minutes = keyboard.nextInt();
 
-        hours = minutes >= 60 ? hours + minutes / 60 : hours ;
+        hours = minutes >= 60 ? hours + minutes / 60 : hours%12 ;
 
-        minutes = hours >= 12 ? ++hours : minutes ;
+        minutes = hours >= 13 ? ++hours : minutes%60 ;
 
-        System.out.println("The Time Is: " + hours + ":" + minutes);
-
+        System.out.printf("The Time is: %d:%02d",hours,minutes );
     }
 }
