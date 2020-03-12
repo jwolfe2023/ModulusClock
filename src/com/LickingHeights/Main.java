@@ -28,9 +28,13 @@ public class Main {
 
         minutes = keyboard.nextInt();
 
-        hours = minutes >= 60 ? hours + minutes / 60 : hours%12 ;
+        hours = minutes >= 60 ? hours + minutes / 60 : hours ;
 
-        minutes = hours >= 13 ? ++hours : minutes%60 ;
+        hours = hours%12;
+
+        minutes = minutes%60 ;
+
+        hours = hours ==0 ? 12 : hours;
 
         System.out.printf("The Time is: %d:%02d",hours,minutes );
     }
